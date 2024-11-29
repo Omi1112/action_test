@@ -1,6 +1,8 @@
 name: test
 
 on:
+  repository_dispatch:
+    types: [test_result]
   workflow_dispatch:
     inputs:
       env:
