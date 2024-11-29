@@ -25,6 +25,8 @@ jobs:
         run: ls
       - name: git log
         run: git log
+      - name: git branch
+        run: git branch
       - name: Event Info
         run: |
           echo "Event: ${{ github.event.inputs.env }}"
