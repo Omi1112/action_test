@@ -19,6 +19,10 @@ jobs:
     environment: ${{ github.event.inputs.env }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: ls
+        run: ls
       - name: Event Info
         run: |
           echo "Event: ${{ github.event.inputs.env }}"
