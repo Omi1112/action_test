@@ -1,0 +1,22 @@
+name: test
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: choice
+        description: "env name"
+        options:
+          - prod
+          - dev
+          - sand
+
+jobs:
+  test:
+    name: ${{ github.event.inputs.env }}
+    environment: ${{ github.event.inputs.env }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event Info
+        run: |
+          echo "Event: ${{ github.event.inputs.env }}"
